@@ -6,8 +6,8 @@
         <span class="title">
           Welcome!
         </span>
-        <button class="alt" @click="open('www.google.com')">Enter</button>
-        <!-- <system-information></system-information> -->
+        <button class="alt" @click="navigate()">Enter</button>
+        <router-link to="/subscribe">Go to Subscribe</router-link>
       </div>
 
       <div class="right-side">
@@ -39,6 +39,9 @@
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)
+      },
+      navigate () {
+
       }
     }
   }

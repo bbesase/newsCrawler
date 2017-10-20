@@ -16,8 +16,8 @@ export default new Router({
     },
     {
       path: '/subscribe',
-      name: 'subscribe',
-      component: require('@/components/Subscribe').default
+      name: 'subscribe-page',
+      component: require('@/components/SubscribePage/Subscribe').default
     }
   ]
 })
