@@ -13,6 +13,11 @@ export default new Router({
     {
       path: '*',
       redirect: '/'
+    },
+    {
+      path: '/subscribe',
+      name: 'subscribe',
+      component: require('@/components/Subscribe').default
     }
   ]
 })

@@ -4,9 +4,10 @@
     <main>
       <div class="left-side">
         <span class="title">
-          Welcome to your new project!
+          Welcome!
         </span>
-        <system-information></system-information>
+        <button class="alt" @click="open('www.google.com')">Enter</button>
+        <!-- <system-information></system-information> -->
       </div>
 
       <div class="right-side">
@@ -82,6 +83,26 @@
   .left-side {
     display: flex;
     flex-direction: column;
+  }
+
+  .left-side button {
+    font-size: .8em;
+    cursor: pointer;
+    outline: none;
+    padding: 0.75em 2em;
+    border-radius: 2em;
+    display: inline-block;
+    color: #fff;
+    background-color: #4fc08d;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+    border: 1px solid #4fc08d;
+    width: 50%;
+  }
+
+  .left-side button.alt {
+    color: #42b983;
+    background-color: transparent;
   }
 
   .welcome {
