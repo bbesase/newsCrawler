@@ -6,6 +6,10 @@
           Welcome!
         </span>
         TEST
+        <button @click="getSources()"></button>
+        <li v-for="source in sources" :key="source.id">
+          {{ source.name }}
+        </li>
       </div>
       <router-link to="/">Go to Home</router-link>
     </main>
@@ -13,9 +17,27 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import GetSources from '../../api/newsAPI'
+
   export default {
     name: 'subscribe-page',
+    mixins: [ GetSources ],
+    data: function () {
+      return {
+        sources: []
+      }
+    },
     methods: {
+      _api () {
+        return axios.get(`https://newsapi.org/v1/sources?language=en`)
+          .then(response => {
+            this.sources = response.data.sources
+          })
+      },
+      getSources () {
+        this._api()
+      }
     }
   }
 </script>
