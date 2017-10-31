@@ -18,6 +18,16 @@ export default new Router({
       path: '/subscribe',
       name: 'subscribe-page',
       component: require('@/components/SubscribePage/Subscribe').default
+    },
+    {
+      path: '/subscribe',
+      name: 'source-list',
+      component: require('@/components/SubscribePage/Sources/SourceList').default
+    },
+    {
+      path: '/subscribe',
+      name: 'source-card',
+      component: require('@/components/SubscribePage/Sources/SourceCard').default
     }
   ]
 })
