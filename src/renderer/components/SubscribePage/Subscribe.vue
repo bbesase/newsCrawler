@@ -8,24 +8,7 @@
         TEST
         <button @click="getSources()">Get Sources</button>
         
-        <div>
-          <b-card title="Card Title"
-                  img-src="https://lorempixel.com/600/300/food/5/"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  style="max-width: 20rem;"
-                  class="mb-2">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>
-        </div>
-        
-        <li v-for="source in sources" :key="source.id">
-          {{ source.name }}
-        </li>
+        <source-list :sources="sources"> </source-list>
       </div>
       <router-link to="/">Go to Home</router-link>
     </main>
@@ -36,8 +19,11 @@
   import axios from 'axios'
   import GetSources from '../../api/newsAPI'
 
+  import SourceList from './Sources/SourceList'
+
   export default {
     name: 'subscribe-page',
+    components: { SourceList },
     mixins: [ GetSources ],
     data: function () {
       return {
